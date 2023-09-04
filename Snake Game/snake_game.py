@@ -219,3 +219,53 @@ The snake's direction cannot be reversed instantly, preventing the snake from co
           
 The Snake game doesn't typically have a winning condition; the goal is to achieve the highest score possible before colliding with a wall or the snake's body.
 ''')
+print("\n\t\t 🐍 𝚂𝚗𝚊𝚔𝚎 𝙶𝚊𝚖𝚎 🐍")
+name=input("\nEnter Your Full Name: ").title()
+Wanna_Play()
+Rules()
+time.sleep(2)
+#CPU()
+pygame.init()
+cell_size=40
+cell_number=20
+#WINDOW SIZE (will be opppening for 1 sec only )
+screen=pygame.display.set_mode((cell_number*cell_size,cell_number*cell_size))
+#this is used to limit our while loop to run faster (As on diffrent laptops it will run diffrently {Slow laptop==slow program})
+clock=pygame.time.Clock()
+apple=pygame.image.load('C:/Users/aksha/OneDrive/Desktop/CODER/Devops_Lab/Snake_Game/Graphics/apple.png').convert_alpha()
+#apple=pygame.image.load('apple.png').convert_alpha()
+game_font=pygame.font.Font(None,25)
+main_game=MAIN()
+SCREEN_UPDATE=pygame.USEREVENT
+pygame.time.set_timer(SCREEN_UPDATE,150)
+#to keep window open we use 
+while True:
+    #to check multiple events in the game(event==movement,timer,quit,etc.)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            #this is used to confirm code is completely closed
+            sys.exit()
+        if event.type== SCREEN_UPDATE:
+            main_game.update()
+        if event.type==pygame.KEYDOWN:
+            if event.key==pygame.K_UP:
+                if main_game.snake.direction.y!=1:
+                    main_game.snake.direction=Vector2(0,-1)
+            if event.key==pygame.K_DOWN:
+                if main_game.snake.direction.y!=-1:
+                    main_game.snake.direction=Vector2(0,1)
+            if event.key==pygame.K_RIGHT:
+                if main_game.snake.direction.x!=-1:
+                    main_game.snake.direction=Vector2(1,0)
+            if event.key==pygame.K_LEFT:
+                if main_game.snake.direction.x!=1:
+                    main_game.snake.direction=Vector2(-1,0)
+
+ 
+    screen.fill((175,215,70))
+    main_game.draw_elements()
+    pygame.display.update()
+    #below line is for framerate
+    clock.tick(60)
+
