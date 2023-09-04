@@ -83,6 +83,7 @@ class SNAKE:
     def add_block(self):
         self.new_block=True
 
+
 class FRUIT:
     def _init_(self):
     #create an x,y pos
@@ -98,6 +99,7 @@ class FRUIT:
         self.x=random.randint(0,cell_number-1)
         self.y=random.randint(0,cell_number-1)
         self.pos=Vector2(self.x,self.y)
+
 
 class MAIN:
    def __init__(self):
@@ -161,7 +163,8 @@ class MAIN:
        apple_rect=apple.get_rect(midright=(score_rect.left,score_rect.centery))
        screen.blit(score_surface,score_rect)
        screen.blit(apple,apple_rect)
-       def Wanna_Play():
+
+def Wanna_Play():
     Ans=input("\nDo you Want to Play Snake game (y/n): ")
     if Ans.lower()== 'y':
         intro="\nHello, {} ! 😊\n(: I hope you will enjoy this Game 😁 :)"  
@@ -173,6 +176,7 @@ class MAIN:
         print("\nInvalid Input!!!\nPlease enter only 'y' or 'n':>>\n")
         time.sleep(2)
         Wanna_Play()
+
 def Rules():
     print('''
 \n\t\tGameplay:
@@ -219,6 +223,7 @@ The snake's direction cannot be reversed instantly, preventing the snake from co
           
 The Snake game doesn't typically have a winning condition; the goal is to achieve the highest score possible before colliding with a wall or the snake's body.
 ''')
+
 print("\n\t\t 🐍 𝚂𝚗𝚊𝚔𝚎 𝙶𝚊𝚖𝚎 🐍")
 name=input("\nEnter Your Full Name: ").title()
 Wanna_Play()
