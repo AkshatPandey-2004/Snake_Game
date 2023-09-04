@@ -161,3 +161,61 @@ class MAIN:
        apple_rect=apple.get_rect(midright=(score_rect.left,score_rect.centery))
        screen.blit(score_surface,score_rect)
        screen.blit(apple,apple_rect)
+       def Wanna_Play():
+    Ans=input("\nDo you Want to Play Snake game (y/n): ")
+    if Ans.lower()== 'y':
+        intro="\nHello, {} ! 😊\n(: I hope you will enjoy this Game 😁 :)"  
+        print(intro.format(name))
+    elif Ans.lower()=='n':
+        print("(: THANK YOU :)")
+        sys.exit()
+    else:
+        print("\nInvalid Input!!!\nPlease enter only 'y' or 'n':>>\n")
+        time.sleep(2)
+        Wanna_Play()
+def Rules():
+    print('''
+\n\t\tGameplay:
+          
+The game takes place on a rectangular grid.          
+The player controls a snake that starts as a single block or segment.
+The snake moves continuously in a particular direction (up, down, left, or right).
+The snake's head can change direction using the arrow keys on the keyboard (up arrow, down arrow, left arrow, right arrow).
+The snake's body follows the head's movement.
+The snake cannot reverse its direction to move directly into its own body, as this would result in collision and game over.
+The snake can only turn at right angles, not diagonally.
+The snake grows longer when it consumes food.
+          
+\t\tFood:
+
+Food items appear randomly on the grid.
+The snake's objective is to consume these food items to grow longer.
+When the snake's head occupies the same cell as a food item, the snake grows by adding one block to its tail.
+After consuming food, a new food item spawns at a random location on the grid.
+          
+\t\tCollision:
+
+Game over occurs when the snake's head collides with any of the following:
+    1)The walls of the grid.
+    2)The snake's own body.
+
+\t\tScoring:
+
+The player earns points for every food item consumed.
+The score usually corresponds to the length of the snake, as longer snakes are more difficult to control and present more opportunities for collision.
+          
+\t\tControls:
+
+The player can control the snake's direction using the arrow keys on the keyboard:
+          
+Up arrow: Move the snake's head upwards.
+Down arrow: Move the snake's head downwards.
+Left arrow: Move the snake's head to the left.
+Right arrow: Move the snake's head to the right.
+          
+The snake's direction cannot be reversed instantly, preventing the snake from colliding with its own body.
+
+\t\tWinning:
+          
+The Snake game doesn't typically have a winning condition; the goal is to achieve the highest score possible before colliding with a wall or the snake's body.
+''')
