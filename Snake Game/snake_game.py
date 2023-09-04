@@ -82,3 +82,19 @@ class SNAKE:
 
     def add_block(self):
         self.new_block=True
+
+class FRUIT:
+    def _init_(self):
+    #create an x,y pos
+    #draw a square
+        self.randomize()
+    
+    def draw_fruit(self):
+        fruit_Rect=pygame.Rect(int(self.pos.x * cell_size),int(self.pos.y * cell_size),cell_size,cell_size)
+        screen.blit(apple,fruit_Rect)
+        #pygame.draw.rect(screen,(126,166,144),fruit_Rect)
+
+    def randomize(self):
+        self.x=random.randint(0,cell_number-1)
+        self.y=random.randint(0,cell_number-1)
+        self.pos=Vector2(self.x,self.y)
