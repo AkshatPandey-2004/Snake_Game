@@ -137,7 +137,10 @@ class MAIN:
                self.game_over()
 
    def game_over(self):
-       print("\nSCORE: "+str(len(self.snake.body)-3))
+       print("\nBetter Luck Next Time!!!!\n")
+       print("\nYOUR SCORE: "+str(len(self.snake.body)-3))
+       print("\n\t\tTHANK YOU FOR PLAYING!!!")
+       print("\nMADE BY:-\nAkshat Pandey\nAnuj Pawadia\nKhushi Jain\n")
        pygame.quit()
        sys.exit()
 
@@ -165,10 +168,9 @@ class MAIN:
        screen.blit(apple,apple_rect)
 
 def Wanna_Play():
-    Ans=input("\nDo you Want to Play Snake game (y/n): ")
+   Ans=input("\nShall we Start the Snake game (y/n): ")
     if Ans.lower()== 'y':
-        intro="\nHello, {} ! 😊\n(: I hope you will enjoy this Game 😁 :)"  
-        print(intro.format(name))
+        pass
     elif Ans.lower()=='n':
         print("(: THANK YOU :)")
         sys.exit()
@@ -226,10 +228,12 @@ The Snake game doesn't typically have a winning condition; the goal is to achiev
 
 print("\n\t\t 🐍 𝚂𝚗𝚊𝚔𝚎 𝙶𝚊𝚖𝚎 🐍")
 name=input("\nEnter Your Full Name: ").title()
-Wanna_Play()
+intro="\nHello, {} ! 😊\n(: I hope you will enjoy this Game 😁 :)"  
+print(intro.format(name))
 Rules()
 time.sleep(2)
-#CPU()
+Wanna_Play()
+time.sleep(2)
 pygame.init()
 cell_size=40
 cell_number=20
