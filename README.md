@@ -1,1 +1,1 @@
-snake gamee
+gsnake gamee
